@@ -60,8 +60,9 @@ type IPPool struct {
 }
 
 type IPPoolSpec struct {
-	IPv4Config  IPv4Config `json:"ipv4config,omitempty"`
-	NetworkName string     `json:"networkname,omitempty"`
+	IPv4Config    IPv4Config `json:"ipv4config,omitempty"`
+	NetworkName   string     `json:"networkname,omitempty"`
+	BindInterface string     `json:"bindinterface,omitempty"`
 }
 
 type IPv4Config struct {
@@ -72,6 +73,7 @@ type IPv4Config struct {
 	DNS          []string `json:"dns,omitempty"`
 	DomainName   string   `json:"domainname,omitempty"`
 	DomainSearch []string `json:"domainsearch,omitempty"`
+	NTP          []string `json:"ntp,omitempty"`
 	LeaseTime    int      `json:"leasetime,omitempty"`
 }
 
