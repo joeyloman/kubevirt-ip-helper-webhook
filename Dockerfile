@@ -1,4 +1,4 @@
-FROM docker.io/golang:1.25-alpine3.22 AS builder
+FROM docker.io/golang:1.25-alpine3.23 AS builder
 RUN mkdir /src /deps
 RUN apk update && apk add git build-base binutils-gold
 WORKDIR /deps
@@ -7,7 +7,7 @@ ADD go.mod /deps
 ADD / /src
 WORKDIR /src
 RUN go build -mod=vendor -o kubevirt-ip-helper-webhook .
-FROM docker.io/alpine:3.22
+FROM docker.io/alpine:3.23
 RUN adduser -S -D -h /app kubevirt-ip-helper-webhook
 USER kubevirt-ip-helper-webhook
 COPY --from=builder /src/kubevirt-ip-helper-webhook /app/

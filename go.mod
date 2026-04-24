@@ -1,14 +1,14 @@
 module github.com/joeyloman/kubevirt-ip-helper-webhook
 
-go 1.25.3
+go 1.25.9
 
 replace k8s.io/apimachinery => k8s.io/apimachinery v0.24.0
 
 replace k8s.io/client-go => k8s.io/client-go v0.24.0
 
 require (
-	github.com/joeyloman/kubevirt-ip-helper v0.8.0
-	github.com/sirupsen/logrus v1.9.0
+	github.com/joeyloman/kubevirt-ip-helper v0.9.1
+	github.com/sirupsen/logrus v1.9.3
 	k8s.io/api v0.24.0
 	k8s.io/apimachinery v0.24.0
 	k8s.io/client-go v12.0.0+incompatible
